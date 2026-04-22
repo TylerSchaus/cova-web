@@ -126,7 +126,7 @@ export function StatsSection() {
   return (
     <section
       id="stats"
-      className={`${dmSans.className} relative w-full pt-16 pb-32 px-6`}
+      className={`${dmSans.className} relative w-full pt-16 pb-16 lg:pb-32 px-6`}
       style={{
         backgroundImage: 'url(/images/stats-bg.jpg)',
         backgroundSize: 'cover',
@@ -173,7 +173,7 @@ export function StatsSection() {
                 >
                   {card.label}
                 </CardItem>
-                <CardItem translateZ="100" className="w-full mt-auto">
+                <CardItem translateZ="100" className="w-full mt-auto pt-6">
                   <img
                     src={card.image}
                     height="200"

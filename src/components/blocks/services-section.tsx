@@ -14,7 +14,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className={`${dmSans.className} relative w-full pt-8 pb-16 px-6`}
+      className={`${dmSans.className} relative w-full pt-8 pb-8 lg:pb-16 px-6`}
       style={{ backgroundColor: '#030303' }}
     >
       <FloatingPathsBackground opacity={0.3} />

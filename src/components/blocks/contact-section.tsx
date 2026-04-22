@@ -22,16 +22,36 @@ export function ContactSection() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          business: form.business,
+          phone: form.phone,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        console.error('Submission failed');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const inputClass = `w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#0066FF]/60 transition-colors duration-200`;
+  const inputClass = `w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#0066FF]/60 transition-colors duration-200 [&:-webkit-autofill]:!bg-transparent [&:-webkit-autofill]:![background-color:rgb(255,255,255,0.05)] [&:-webkit-autofill]:![-webkit-text-fill-color:white] [&:-webkit-autofill]:![box-shadow:0_0_0_1000px_rgba(255,255,255,0.05)_inset]`;
   const labelClass = `${mono.className} text-xs tracking-widest uppercase text-white/30 mb-2 block`;
 
   return (
