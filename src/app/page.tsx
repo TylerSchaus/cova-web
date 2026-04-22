@@ -4,6 +4,7 @@ import { ProcessSection } from '@/components/blocks/process-section'
 import { StatsSection } from '@/components/blocks/stats-section'
 import { ServicesSection } from '@/components/blocks/services-section'
 import { ContactSection } from '@/components/blocks/contact-section'
+import { Footer } from '@/components/blocks/footer'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <StatsSection />
       <ServicesSection />
       <ContactSection />
+      <Footer />
     </main>
   )
 }

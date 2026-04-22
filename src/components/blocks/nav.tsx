@@ -11,7 +11,7 @@ const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500'] })
 
 const menuItems = [
     { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
+    { name: 'Process', href: '#process' },
     { name: 'Contact', href: '#contact' },
 ]
 
@@ -38,7 +38,7 @@ export const HeroHeader = () => {
                             <div className="flex w-full justify-between lg:w-auto">
                                 <Link href="/" aria-label="home" className="flex items-center space-x-3">
                                     <img src="/logo.png" alt="Cova Systems" className="h-10 w-auto" />
-                                    <span className={`${syne.className} font-bold text-white text-lg tracking-widest`}>COVA SYSTEMS</span>
+                                    <span className={`${syne.className} font-bold text-white text-medium tracking-widest`}>COVA SYSTEMS</span>
                                 </Link>
                                 <button
                                     onClick={() => setMenuState(!menuState)}

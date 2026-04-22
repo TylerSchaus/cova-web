@@ -125,6 +125,7 @@ function Marquee() {
 export function StatsSection() {
   return (
     <section
+      id="stats"
       className={`${dmSans.className} relative w-full pt-16 pb-32 px-6`}
       style={{
         backgroundImage: 'url(/images/stats-bg.jpg)',

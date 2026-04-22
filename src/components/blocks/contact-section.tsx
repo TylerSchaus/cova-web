@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/neon-button';
 import { TextRollInView } from '@/components/ui/text-roll-inview';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, Mail, MapPin, Clock } from 'lucide-react';
+import { ShinyBorder } from '@/components/ui/shiny-border';
+import { ShinySquare } from '@/components/ui/shiny-square';
 
 const syne = Syne({ subsets: ['latin'], weight: ['700'] });
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500'] });
@@ -34,7 +36,8 @@ export function ContactSection() {
 
   return (
     <section
-      className={`${dmSans.className} relative w-full py-32 px-6`}
+      id="contact"
+      className={`${dmSans.className} relative w-full pt-20 pb-32 px-6`}
       style={{ backgroundColor: '#030303'}}
     >
       <div className="max-w-7xl mx-auto">
@@ -43,16 +46,20 @@ export function ContactSection() {
           <p className={`${mono.className} text-xs tracking-widest uppercase mb-4`} style={{ color: '#0066FF' }}>
             GET IN TOUCH
           </p>
-          <h2 className={`${syne.className} text-4xl md:text-5xl font-bold text-white`}>
+          <h2 className={`${syne.className} text-4xl md:text-5xl font-bold text-white mb-4`}>
             <TextRollInView>Let's talk.</TextRollInView>
           </h2>
+          <p className="text-base max-w-lg" style={{ color: 'rgba(255,255,255,0.4)' }}>
+            Want to learn more? Reach out for pricing inquiries or a live demo of our automation services.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           {/* Form */}
-          <div className="relative">
-            <AnimatePresence mode="wait">
+          <ShinyBorder className="w-full">
+            <div className="relative p-8">
+              <AnimatePresence mode="wait">
               {!submitted ? (
                 <motion.form
                   key="form"
@@ -69,7 +76,7 @@ export function ContactSection() {
                         name="name"
                         value={form.name}
                         onChange={handleChange}
-                        placeholder="Tyler Schaus"
+                        placeholder="Jane Doe"
                         className={inputClass}
                         required
                       />
@@ -105,7 +112,7 @@ export function ContactSection() {
                         type="email"
                         value={form.email}
                         onChange={handleChange}
-                        placeholder="tyler@yourbusiness.com"
+                        placeholder="jane@yourbusiness.com"
                         className={inputClass}
                         required
                       />
@@ -159,10 +166,13 @@ export function ContactSection() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+            </div>
+          </ShinyBorder>
 
           {/* Right side — contact info + trust */}
-          <div className="flex flex-col gap-10 lg:pl-8 lg:border-l border-white/10">
+          <div className="relative">
+            <ShinySquare />
+            <div className="flex flex-col gap-10 lg:pl-8 lg:border-l border-white/10 relative z-10">
 
             <div className="flex flex-col gap-6">
               <div className="flex items-start gap-4">
@@ -204,6 +214,7 @@ export function ContactSection() {
               </p>
             </div>
 
+            </div>
           </div>
         </div>
       </div>

@@ -85,7 +85,7 @@ function PricingCard({
           </Badge>
         )}
         <div className="ml-auto">
-          <Button size="sm" className="text-white text-xs">{cta}</Button>
+          <Button size="sm" className="text-white text-xs" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>{cta}</Button>
         </div>
       </div>
 
@@ -154,7 +154,7 @@ export function BentoPricing({ isUSD = false }: { isUSD?: boolean }) {
             Most Popular
           </Badge>
           <div className="ml-auto">
-            <Button className="text-white text-sm">Get a Quote</Button>
+            <Button className="text-white text-sm" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Get a Quote</Button>
           </div>
         </div>
 

@@ -13,7 +13,8 @@ export function ServicesSection() {
   const [isUSD, setIsUSD] = useState(false);
   return (
     <section
-      className={`${dmSans.className} relative w-full pt-8 pb-24 px-6`}
+      id="services"
+      className={`${dmSans.className} relative w-full pt-8 pb-16 px-6`}
       style={{ backgroundColor: '#030303' }}
     >
       <FloatingPathsBackground opacity={0.3} />
