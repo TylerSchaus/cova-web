@@ -26,7 +26,7 @@ export function Footer() {
           </span>
           <span className="hidden sm:block text-white/20 text-xs">—</span>
           <span className="hidden sm:block text-white/30 text-xs" style={{ fontFamily: 'inherit' }}>
-            Built for trades. Designed to convert.
+            Built for owners. Designed to convert.
           </span>
         </div>
 

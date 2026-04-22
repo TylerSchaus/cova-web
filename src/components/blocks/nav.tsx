@@ -33,7 +33,7 @@ export const HeroHeader = () => {
                 <nav
                     data-state={menuState && 'active'}
                     className="fixed z-50 w-full px-2 group">
-                    <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12 rounded-2xl', isScrolled && 'bg-neutral-900/80 max-w-4xl border border-white/10 backdrop-blur-lg lg:px-5')}>
+                    <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12 rounded-2xl border border-transparent', isScrolled && 'bg-neutral-900/80 max-w-4xl border-white/10 backdrop-blur-lg lg:px-5')}>
                         <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                             <div className="flex w-full justify-between lg:w-auto">
                                 <Link href="/" aria-label="home" className="flex items-center space-x-3">
@@ -74,7 +74,7 @@ export const HeroHeader = () => {
                                     </ul>
                                 </div>
                                 <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                    <Button size="default" className="text-white text-sm font-medium">
+                                    <Button size="default" className="text-white text-sm font-medium" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                                         Get a Quote
                                     </Button>
                                 </div>

@@ -189,7 +189,7 @@ function HeroGeometric({
                         animate="visible"
                         className="flex justify-center mt-4"
                     >
-                        <NeonButton size="lg" className="text-white text-base font-medium">
+                        <NeonButton size="lg" className="text-white text-base font-medium" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                             Get in Touch
                         </NeonButton>
                     </motion.div>

@@ -146,7 +146,7 @@ export default function RadialOrbitalTimeline({
             transform: `translate(${centerOffset.x}px, ${centerOffset.y}px)`,
           }}
         >
-          <div className="absolute w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 via-blue-500 to-teal-500 animate-pulse flex items-center justify-center z-10">
+          <div className="absolute w-16 h-16 rounded-full bg-gradient-to-br from-[#0066FF] via-[#0551ef] to-[#054bec] animate-pulse flex items-center justify-center z-10">
             <div className="absolute w-20 h-20 rounded-full border border-white/20 animate-ping opacity-70"></div>
             <div className="absolute w-24 h-24 rounded-full border border-white/10 animate-ping opacity-50" style={{ animationDelay: "0.5s" }}></div>
             <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center overflow-hidden">
@@ -154,7 +154,7 @@ export default function RadialOrbitalTimeline({
               </div>
           </div>
 
-          <div className="absolute w-96 h-96 rounded-full border border-white/10"></div>
+          <div className="absolute w-96 h-96 rounded-full border border-[#0066FF]/20" style={{ boxShadow: '0 0 40px rgba(0,102,255,0.05)' }}></div>
 
           {mounted && timelineData.map((item, index) => {
             const position = calculateNodePosition(index, timelineData.length);
@@ -183,7 +183,7 @@ export default function RadialOrbitalTimeline({
                 <div
                   className={`absolute rounded-full -inset-1 ${isPulsing ? "animate-pulse duration-1000" : ""}`}
                   style={{
-                    background: `radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%)`,
+                    background: `radial-gradient(circle, rgba(0,102,255,0.25) 0%, rgba(0,102,255,0) 70%)`,
                     width: `${item.energy * 0.5 + 40}px`,
                     height: `${item.energy * 0.5 + 40}px`,
                     left: `-${(item.energy * 0.5 + 40 - 40) / 2}px`,
@@ -195,7 +195,7 @@ export default function RadialOrbitalTimeline({
                   w-10 h-10 rounded-full flex items-center justify-center
                   ${isExpanded ? "bg-white text-black" : isRelated ? "bg-white/50 text-black" : "bg-black text-white"}
                   border-2
-                  ${isExpanded ? "border-white shadow-lg shadow-white/30" : isRelated ? "border-white animate-pulse" : "border-white/40"}
+                  ${isExpanded ? "border-white shadow-lg shadow-white/30" : isRelated ? "border-[#0066FF] animate-pulse" : "border-[#0066FF]/40"}
                   transition-all duration-300 transform
                   ${isExpanded ? "scale-150" : ""}
                 `}>
@@ -236,7 +236,7 @@ export default function RadialOrbitalTimeline({
                         </div>
                         <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
+                            className="h-full bg-gradient-to-r from-[#0066FF] to-[#054bec]"
                             style={{ width: `${item.energy}%` }}
                           ></div>
                         </div>

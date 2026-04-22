@@ -9,6 +9,28 @@ import {
 } from "@/components/ui/carousel";
 import { TextRoll } from "./text-roll"; // Assuming text-roll.tsx is in the same directory
 
+type AnimatedCarouselProps = {
+  title?: string;
+  logoCount?: number;
+  autoPlay?: boolean;
+  autoPlayInterval?: number;
+  logos?: string[] | null;
+  containerClassName?: string;
+  titleClassName?: string;
+  carouselClassName?: string;
+  logoClassName?: string;
+  itemsPerViewMobile?: number;
+  itemsPerViewDesktop?: number;
+  spacing?: string;
+  padding?: string;
+  logoContainerWidth?: string;
+  logoContainerHeight?: string;
+  logoImageWidth?: string;
+  logoImageHeight?: string;
+  logoMaxWidth?: string;
+  logoMaxHeight?: string;
+};
+
 export const AnimatedCarousel = ({
   title = "Trusted by thousands of businesses worldwide",
   logoCount = 15,
@@ -30,7 +52,7 @@ export const AnimatedCarousel = ({
   logoImageHeight = "h-full",
   logoMaxWidth = "",
   logoMaxHeight = "",
-}) => {
+}: AnimatedCarouselProps) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -88,6 +110,6 @@ export const AnimatedCarousel = ({
   );
 };
 
-export const Case1 = (props) => {
+export const Case1 = (props: AnimatedCarouselProps) => {
   return <AnimatedCarousel {...props} />;
 };

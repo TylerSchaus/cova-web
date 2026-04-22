@@ -167,7 +167,7 @@ export function BentoPricing({ isUSD = false }: { isUSD?: boolean }) {
               'Fully custom — no templates, ever',
               'Mobile-first, fast, and built to convert',
               'Live within 2 weeks of design approval',
-              'You own the code, domain, and hosting',
+              'You own it. We manage it',
               'Includes one round of revisions',
             ].map((f, i) => (
               <li key={i} className="flex items-center gap-3">

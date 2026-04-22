@@ -20,7 +20,7 @@ const cards = [
     title: '100%',
     number: 100,
     suffix: '%',
-    label: 'Ownership — your code, domain, and hosting',
+    label: 'Fully managed - deployment, maintenance, and updates.',
     image: '/images/ownership.png',
   },
   {
@@ -85,13 +85,13 @@ function Marquee() {
   const items = [
     'CUSTOM BUILT',
     'FAST DELIVERY',
-    'FULL OWNERSHIP',
+    'FULLY MANAGED',
     'NO LOCK-IN',
     'BC BASED',
     '24HR RESPONSE',
     'NO TEMPLATES',
     '2 WEEK TURNAROUND',
-    'YOU OWN EVERYTHING',
+    'WE HANDLE EVERYTHING',
     'ZERO SETUP FEES',
   ];
 
