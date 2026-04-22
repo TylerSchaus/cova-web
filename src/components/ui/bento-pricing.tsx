@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/neon-button';
 import { Badge } from '@/components/ui/badge';
@@ -8,6 +9,29 @@ import { Syne, DM_Sans } from 'next/font/google';
 
 const syne = Syne({ subsets: ['latin'], weight: ['700'] });
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500'] });
+
+function AnimatedPrice({ price, suffix }: { price: string; suffix?: string }) {
+  return (
+    <div className="overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={price}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -20, opacity: 0 }}
+          transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+        >
+          <span className={`${syne.className} text-white font-mono text-4xl font-semibold tracking-tight`}>
+            {price}
+          </span>
+          {suffix && (
+            <span className="text-white/40 text-sm mb-1 ml-1">{suffix}</span>
+          )}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+}
 
 function FilledCheck() {
   return (
@@ -65,12 +89,11 @@ function PricingCard({
         </div>
       </div>
 
-      <div className="flex items-end gap-2 px-4 py-2">
-        <span className={`${syne.className} text-white font-mono text-4xl font-semibold tracking-tight`}>
-          {priceLabel}
-        </span>
-        {priceLabel.toLowerCase() !== 'free' && priceLabel.toLowerCase() !== 'custom pricing' && (
-          <span className="text-white/40 text-sm mb-1">{priceSuffix}</span>
+      <div className="px-4 py-2">
+        {priceLabel.toLowerCase() === 'custom pricing' ? (
+          <AnimatedPrice price={priceLabel} />
+        ) : (
+          <AnimatedPrice price={priceLabel} suffix={priceSuffix} />
         )}
       </div>
 
@@ -86,7 +109,25 @@ function PricingCard({
   );
 }
 
-export function BentoPricing() {
+export function BentoPricing({ isUSD = false }: { isUSD?: boolean }) {
+  const prices = {
+    maintenance: isUSD ? 'From $110' : 'From $150',
+    automation: isUSD ? '$550' : '$750',
+    modulesFrom: isUSD ? 'From $185' : 'From $250',
+  };
+
+  const moduleFeatures = isUSD
+    ? [
+        'Missed Call Capture — $260/month',
+        'Review Generation — $185/month',
+        'Reactivation Campaigns — $185/month',
+      ]
+    : [
+        'Missed Call Capture — $350/month',
+        'Review Generation — $250/month',
+        'Reactivation Campaigns — $250/month',
+      ];
+
   return (
     <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-8">
       {/* Featured — Website Design & Build */}
@@ -119,9 +160,7 @@ export function BentoPricing() {
 
         <div className="flex flex-col p-4 lg:flex-row">
           <div className="pb-4 lg:w-[35%]">
-            <span className={`${syne.className} text-white text-4xl font-semibold tracking-tight`}>
-              Custom Pricing
-            </span>
+            <AnimatedPrice price="Custom Pricing" />
           </div>
           <ul className="text-white/50 grid gap-4 text-sm lg:w-[65%]">
             {[
@@ -143,7 +182,7 @@ export function BentoPricing() {
       {/* Website Maintenance */}
       <PricingCard
         titleBadge="MAINTENANCE"
-        priceLabel="From $150"
+        priceLabel={prices.maintenance}
         priceSuffix="/month"
         features={[
           'Updates and content changes',
@@ -156,7 +195,7 @@ export function BentoPricing() {
       {/* Full Automation Package */}
       <PricingCard
         titleBadge="AI AUTOMATION PACKAGE"
-        priceLabel="$750"
+        priceLabel={prices.automation}
         priceSuffix="/month"
         features={[
           'Missed Call Capture — 24/7 AI SMS agent',
@@ -173,13 +212,9 @@ export function BentoPricing() {
       {/* Individual Automation Modules */}
       <PricingCard
         titleBadge="INDIVIDUAL MODULES"
-        priceLabel="From $250"
+        priceLabel={prices.modulesFrom}
         priceSuffix="/month"
-        features={[
-          'Missed Call Capture — $350/month',
-          'Review Generation — $250/month',
-          'Reactivation Campaigns — $250/month',
-        ]}
+        features={moduleFeatures}
         cta="Learn More"
         className="lg:col-span-4"
       />

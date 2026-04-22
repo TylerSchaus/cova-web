@@ -122,6 +122,10 @@
   100% { transform: translateX(-50%); }
 }
 
+html, body {
+  background-color: #030303;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

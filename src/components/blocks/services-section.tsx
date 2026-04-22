@@ -1,13 +1,16 @@
 'use client';
+import { useState } from 'react';
 import { Syne, DM_Sans } from 'next/font/google';
 import { BentoPricing } from '@/components/ui/bento-pricing';
 import { TextRollInView } from '@/components/ui/text-roll-inview';
 import { FloatingPathsBackground } from '@/components/ui/background-paths';
+import CinematicSwitch from '@/components/ui/cinematic-glow-toggle';
 
 const syne = Syne({ subsets: ['latin'], weight: ['700'] });
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500'] });
 
 export function ServicesSection() {
+  const [isUSD, setIsUSD] = useState(false);
   return (
     <section
       className={`${dmSans.className} relative w-full pt-8 pb-24 px-6`}
@@ -26,7 +29,12 @@ export function ServicesSection() {
             Web development is our entry point. Automation is where we take you next.
           </p>
         </div>
-        <BentoPricing />
+        <div className="relative">
+          <div className="absolute -top-12 right-0 z-10">
+            <CinematicSwitch isOn={isUSD} onToggle={() => setIsUSD(!isUSD)} />
+          </div>
+          <BentoPricing isUSD={isUSD} />
+        </div>
       </div>
       <div
         className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"

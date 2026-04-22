@@ -100,20 +100,22 @@ function Marquee() {
   return (
     <div className="relative w-full overflow-hidden py-6 mt-12" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
       <div
-        className="flex gap-12 whitespace-nowrap"
+        className="flex whitespace-nowrap"
         style={{
           animation: 'marquee 30s linear infinite',
           width: 'max-content',
         }}
       >
         {repeated.map((item, index) => (
-          <span
-            key={index}
-            className="text-xs font-mono tracking-widest"
-            style={{ color: 'rgba(255,255,255,0.6)' }}
-          >
-            {item} <span style={{ color: '#0066FF' }}>·</span>
-          </span>
+          <div key={index} className="flex items-center">
+            <span
+              className="text-xs font-mono tracking-widest px-6"
+              style={{ color: 'rgba(255,255,255,0.6)' }}
+            >
+              {item}
+            </span>
+            <span style={{ color: '#0066FF', fontSize: '10px' }}>·</span>
+          </div>
         ))}
       </div>
     </div>

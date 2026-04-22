@@ -69,7 +69,7 @@ const timelineData = [
 export function ProcessSection() {
   return (
     <section className={`${dmSans.className} relative w-full min-h-fit lg:min-h-screen flex items-center pb-0`} style={{ backgroundColor: '#030303' }}>
-      <BGPattern variant="grid" mask="fade-edges" fill="#2a2a2a" size={32} className="z-0 opacity-50" />
+      <BGPattern variant="grid" mask="fade-y" fill="#2a2a2a" size={32} className="z-0 opacity-50" />
       <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 items-center">
 
         <div className="flex flex-col gap-8 text-white py-6 lg:py-0">

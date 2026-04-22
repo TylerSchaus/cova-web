@@ -34,8 +34,8 @@ export function ContactSection() {
 
   return (
     <section
-      className={`${dmSans.className} relative w-full pt-12 pb-32 px-6`}
-      style={{ backgroundColor: '#030303' }}
+      className={`${dmSans.className} relative w-full py-32 px-6`}
+      style={{ backgroundColor: '#030303'}}
     >
       <div className="max-w-7xl mx-auto">
 
