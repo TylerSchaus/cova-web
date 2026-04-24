@@ -32,16 +32,20 @@ export function Footer() {
 
         {/* Center — Nav links */}
         <nav className="flex items-center gap-6">
-          {['Services', 'Process', 'Contact'].map((item) => (
+          {[
+            { name: 'About', href: '#tech-seo' },
+            { name: 'Pricing', href: '#services' },
+            { name: 'Contact', href: '#contact' },
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.name}
+              href={item.href}
               className={`${mono.className} text-xs tracking-widest uppercase transition-colors duration-200`}
               style={{ color: 'rgba(255,255,255,0.3)' }}
               onMouseEnter={e => (e.currentTarget.style.color = '#ffffff')}
               onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.3)')}
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </nav>

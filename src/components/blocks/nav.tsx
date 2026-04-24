@@ -10,8 +10,8 @@ const syne = Syne({ subsets: ['latin'], weight: ['700'] })
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500'] })
 
 const menuItems = [
-    { name: 'Services', href: '#services' },
-    { name: 'Process', href: '#process' },
+    { name: 'About', href: '#tech-seo' },
+    { name: 'Pricing', href: '#services' },
     { name: 'Contact', href: '#contact' },
 ]
 

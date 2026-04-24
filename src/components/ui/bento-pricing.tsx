@@ -67,6 +67,7 @@ function PricingCard({
         className,
       )}
     >
+      <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(to right, #0066FF, #0551ef, #054bec)' }} />
       <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
         <div className="from-white/5 to-white/2 absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)]">
           <div
@@ -144,6 +145,7 @@ export function BentoPricing({ isUSD = false }: { isUSD?: boolean }) {
           'lg:col-span-5',
         )}
       >
+        <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(to right, #0066FF, #0551ef, #054bec)' }} />
         <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
           <div className="from-white/5 to-white/2 absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)]">
             <div

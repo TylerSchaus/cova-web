@@ -154,8 +154,9 @@ export function StatsSection() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="relative rounded-xl p-5 sm:p-6 border bg-black border-white/[0.2] flex flex-col gap-2"
+              className="relative overflow-hidden rounded-xl p-5 sm:p-6 border bg-black border-white/10 flex flex-col gap-2"
             >
+              <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(to right, #0066FF, #0551ef, #054bec)' }} />
               <div className="flex justify-between items-start w-full">
                 <span className={`${syne.className} text-4xl font-bold text-white`}>
                   <AnimatedStat value={card.number} suffix={card.suffix} />
