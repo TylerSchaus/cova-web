@@ -76,7 +76,7 @@ export function ProcessSection() {
           <div>
             <p className="text-xs font-mono text-[#0675ff] tracking-widest uppercase mb-3">How It Works</p>
             <h2 className={`${syne.className} text-3xl md:text-5xl font-bold text-white leading-tight w-full`}>
-              <TextRollInView>From contact to live site.</TextRollInView>
+              <TextRollInView>From first contact to live site.</TextRollInView>
             </h2>
           </div>
 

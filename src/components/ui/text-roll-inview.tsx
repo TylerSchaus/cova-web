@@ -11,22 +11,22 @@ export function TextRollInView({ once = true, ...props }: TextRollInViewProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once, margin: '0px 0px -10% 0px' });
 
-  const chars = props.children.split('');
+  const words = props.children.split(' ');
 
   return (
     <span ref={ref}>
       {isInView && (
         <span aria-label={props.children}>
-          {chars.map((char, i) => (
+          {words.map((word, i) => (
             <motion.span
               key={i}
               aria-hidden="true"
-              initial={{ opacity: 0, marginTop: '6px' }}
-              animate={{ opacity: 1, marginTop: '0px' }}
-              transition={{ duration: 0.4, delay: i * 0.03, ease: 'easeOut' }}
-              style={{ display: 'inline' }}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.08, ease: 'easeOut' }}
+              style={{ display: 'inline-block' }}
             >
-              {char === ' ' ? ' ' : char}
+              {word}{i < words.length - 1 ? ' ' : ''}
             </motion.span>
           ))}
         </span>
