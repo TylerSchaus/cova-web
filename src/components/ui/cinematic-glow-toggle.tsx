@@ -1,6 +1,4 @@
 "use client";
-import { cn } from "@/lib/utils";
-import React from "react";
 import { motion } from "framer-motion";
 
 interface CinematicSwitchProps {
@@ -13,7 +11,7 @@ interface CinematicSwitchProps {
 export default function CinematicSwitch({ isOn, onToggle, labelLeft = "CAD", labelRight = "USD" }: CinematicSwitchProps) {
   return (
     <div
-      className="flex items-center gap-3 cursor-pointer"
+      className="flex items-center gap-3 cursor-pointer min-h-[44px] py-2"
       onClick={onToggle}
     >
       <span className={`text-xs font-mono tracking-wider transition-colors duration-300 ${!isOn ? "text-white" : "text-white/30"}`}>

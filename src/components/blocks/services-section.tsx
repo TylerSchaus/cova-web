@@ -19,26 +19,26 @@ export function ServicesSection() {
     >
       <FloatingPathsBackground opacity={0.3} />
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-start text-left mb-12 gap-4">
-          <p className="text-xs font-mono tracking-widest uppercase" style={{ color: '#0066FF' }}>
-            WHAT WE BUILD
-          </p>
-          <h2 className={`${syne.className} text-4xl md:text-5xl font-bold text-white`}>
-            <TextRollInView>Services & Pricing.</TextRollInView>
-          </h2>
-          <p className="text-base max-w-md" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            Web development is our entry point. Automation is where we take you next.
-          </p>
-        </div>
-        <div className="relative">
-          <div className="absolute -top-12 right-0 z-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-4 gap-4">
+          <div className="flex flex-col gap-4">
+            <p className="text-xs font-mono tracking-widest uppercase" style={{ color: '#0066FF' }}>
+              WHAT WE BUILD
+            </p>
+            <h2 className={`${syne.className} text-4xl md:text-5xl font-bold text-white`}>
+              <TextRollInView>Services & Pricing.</TextRollInView>
+            </h2>
+            <p className="text-base max-w-md" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              Web development is our entry point. Automation is where we take you next.
+            </p>
+          </div>
+          <div className="flex-shrink-0">
             <CinematicSwitch isOn={isUSD} onToggle={() => setIsUSD(!isUSD)} />
           </div>
-          <BentoPricing isUSD={isUSD} />
         </div>
+        <BentoPricing isUSD={isUSD} />
       </div>
       <div
-        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
         style={{
           background: 'linear-gradient(to bottom, transparent, #030303)'
         }}

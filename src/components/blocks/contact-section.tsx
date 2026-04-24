@@ -57,12 +57,12 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className={`${dmSans.className} relative w-full pt-20 pb-32 px-6`}
+      className={`${dmSans.className} relative w-full pt-8 pb-24 px-6`}
       style={{ backgroundColor: '#030303'}}
     >
       <div className="max-w-7xl mx-auto">
 
-        <div className="mb-16">
+        <div className="mb-8">
           <p className={`${mono.className} text-xs tracking-widest uppercase mb-4`} style={{ color: '#0066FF' }}>
             GET IN TOUCH
           </p>

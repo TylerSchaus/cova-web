@@ -68,17 +68,15 @@ const timelineData = [
 
 export function ProcessSection() {
   return (
-    <section id="process" className={`${dmSans.className} relative w-full min-h-fit lg:min-h-screen flex items-center pb-0`} style={{ backgroundColor: '#030303' }}>
+    <section id="process" className={`${dmSans.className} relative w-full min-h-fit lg:min-h-screen flex items-center pb-0 overflow-hidden`} style={{ backgroundColor: '#030303' }}>
       <BGPattern variant="grid" mask="fade-y" fill="#2a2a2a" size={32} className="z-0 opacity-50" />
       <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 items-center">
 
         <div className="flex flex-col gap-8 text-white py-6 lg:py-0">
           <div>
             <p className="text-xs font-mono text-[#0675ff] tracking-widest uppercase mb-3">How It Works</p>
-            <h2 className={`${syne.className} text-4xl md:text-5xl font-bold text-white leading-tight`}>
-              <TextRollInView>From first contact to</TextRollInView>
-              <br />
-              <TextRollInView>live site.</TextRollInView>
+            <h2 className={`${syne.className} text-3xl md:text-5xl font-bold text-white leading-tight w-full`}>
+              <TextRollInView>From contact to live site.</TextRollInView>
             </h2>
           </div>
 
@@ -97,16 +95,13 @@ export function ProcessSection() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:block w-full">
-          <div className="w-full h-[500px] lg:h-screen relative lg:translate-x-12">
+        <div className="hidden lg:block w-full">
+          <div className="w-full h-screen relative lg:translate-x-12">
             <RadialOrbitalTimeline timelineData={timelineData} />
-            <p className="hidden lg:block absolute bottom-20 left-1/2 -translate-x-1/2 text-white/50 text-xs font-mono tracking-widest animate-pulse text-center whitespace-nowrap">
+            <p className="absolute bottom-20 left-1/2 -translate-x-1/2 text-white/50 text-xs font-mono tracking-widest animate-pulse text-center whitespace-nowrap">
               CLICK ANY NODE TO EXPLORE
             </p>
           </div>
-          <p className="lg:hidden text-center text-white/50 text-xs font-mono tracking-widest animate-pulse py-6">
-            CLICK ANY NODE TO EXPLORE
-          </p>
         </div>
 
       </div>

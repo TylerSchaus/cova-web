@@ -44,7 +44,7 @@ function ElegantShape({
                 ease: [0.23, 0.86, 0.39, 0.96] as [number, number, number, number],
                 opacity: { duration: 1.2 },
             }}
-            className={cn("absolute", className)}
+            className={cn("absolute scale-[0.5] sm:scale-[0.75] lg:scale-100 origin-center", className)}
         >
             <motion.div
                 animate={{
@@ -78,7 +78,7 @@ function ElegantShape({
 }
 
 function HeroGeometric({
-    title1 = "Websites That Work",
+    title1 = "Digital Solutions That Work",
     title2 = "As Hard As You Do",
 }: {
     title1?: string;
@@ -148,15 +148,15 @@ function HeroGeometric({
                 />
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mx-auto text-center">
+            <div className="relative z-10 container mx-auto px-4 md:px-6 mt-12">
+                <div className="max-w-4xl mx-auto text-center">
                     <motion.div
                         custom={1}
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className={`${syne.className} text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight`}>
+                        <h1 className={`${syne.className} text-4xl sm:text-6xl md:text-8xl lg:text-8xl font-bold mb-6 md:mb-8 tracking-tight`}>
                             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                                 {title1}
                             </span>
@@ -178,7 +178,7 @@ function HeroGeometric({
                         animate="visible"
                     >
                         <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-                            Your work speaks for itself. Your website should too.
+                            We elevate your online presence with custom digital solutions. Fast, SEO-optimized, and designed to convert visitors into customers.
                         </p>
                     </motion.div>
 
@@ -189,7 +189,7 @@ function HeroGeometric({
                         animate="visible"
                         className="flex justify-center mt-4"
                     >
-                        <NeonButton size="lg" className="text-white text-base font-medium" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                        <NeonButton size="lg" className="text-white text-base font-medium w-full sm:w-auto" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                             Get in Touch
                         </NeonButton>
                     </motion.div>

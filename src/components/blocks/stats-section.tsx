@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { Syne, DM_Sans } from 'next/font/google';
-import { CardContainer, CardBody, CardItem } from '@/components/ui/3d-card';
 import { CheckCircle } from 'lucide-react';
 import { TextRollInView } from '@/components/ui/text-roll-inview';
 
@@ -20,21 +19,21 @@ const cards = [
     title: '100%',
     number: 100,
     suffix: '%',
-    label: 'Fully managed - deployment, maintenance, and updates.',
+    label: 'Fully managed — deployment, maintenance, and updates.',
     image: '/images/ownership.png',
   },
   {
     title: '0 Templates',
     number: 0,
     suffix: '',
-    label: 'Templates used. Every site built from scratch',
+    label: 'Templates used. Every site built from scratch.',
     image: '/images/creative.png',
   },
   {
     title: '24 hrs',
     number: 24,
     suffix: ' hrs',
-    label: 'Response time on every project, guaranteed',
+    label: 'Response time on every project, guaranteed.',
     image: '/images/responsive.png',
   },
 ];
@@ -126,7 +125,7 @@ export function StatsSection() {
   return (
     <section
       id="stats"
-      className={`${dmSans.className} relative w-full pt-16 pb-16 lg:pb-32 px-6`}
+      className={`${dmSans.className} relative w-full pt-16 pb-8 lg:pb-32 px-4 sm:px-6`}
       style={{
         backgroundImage: 'url(/images/stats-bg.jpg)',
         backgroundSize: 'cover',
@@ -151,39 +150,27 @@ export function StatsSection() {
             No templates. No waiting. Every site built to your business.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch auto-rows-fr">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {cards.map((card, index) => (
-            <CardContainer key={index} containerClassName="py-0 w-full h-full" className="w-full h-full">
-              <CardBody className="relative w-full h-full rounded-xl p-6 border bg-black border-white/[0.2] hover:shadow-2xl hover:shadow-black/[0.1] flex flex-col">
-                <div className="flex justify-between items-center w-full">
-                  <CardItem
-                    translateZ="50"
-                    className={`${syne.className} text-3xl lg:text-4xl font-bold`}
-                    style={{ color: '#ffffff' }}
-                  >
-                    <AnimatedStat value={card.number} suffix={card.suffix} />
-                  </CardItem>
-                  <CheckCircle size={16} style={{ color: '#0066FF' }} />
-                </div>
-                <CardItem
-                  as="p"
-                  translateZ="60"
-                  className="text-sm max-w-sm mt-2"
-                  style={{ color: 'rgba(255,255,255,0.5)' }}
-                >
-                  {card.label}
-                </CardItem>
-                <CardItem translateZ="100" className="w-full mt-auto pt-6">
-                  <img
-                    src={card.image}
-                    height="200"
-                    width="200"
-                    className="h-52 w-full object-contain rounded-xl"
-                    alt={card.title}
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
+            <div
+              key={index}
+              className="relative rounded-xl p-5 sm:p-6 border bg-black border-white/[0.2] flex flex-col gap-2"
+            >
+              <div className="flex justify-between items-start w-full">
+                <span className={`${syne.className} text-4xl font-bold text-white`}>
+                  <AnimatedStat value={card.number} suffix={card.suffix} />
+                </span>
+                <CheckCircle size={16} style={{ color: '#0066FF' }} className="mt-1 flex-shrink-0" />
+              </div>
+              <p className="text-sm leading-snug" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                {card.label}
+              </p>
+              <img
+                src={card.image}
+                alt=""
+                className="hidden lg:block w-full h-full object-contain"
+              />
+            </div>
           ))}
         </div>
         <Marquee />
